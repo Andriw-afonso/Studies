@@ -19,6 +19,7 @@ def prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age):
   url=path +'oi'
   headers={'content-type':'application/json'}
   data=df
+  r=requests.post(url,data=data,headers=headers)
 
   #Prediction
   df=pd.DataFrame(r.json(),columns=r.json()[0].keys())
@@ -61,3 +62,4 @@ def main():
      
 if __name__=='__main__': 
     main()
+     
