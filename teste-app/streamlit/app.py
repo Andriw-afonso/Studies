@@ -4,8 +4,8 @@ import streamlit as st
   
 # function input
 def prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age):
-  
-    return print('Hello')
+    a='Hello'
+    return a
       
   
 # webapp  
@@ -33,7 +33,7 @@ def main():
     if st.button("Predict"): 
         result = prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age) 
         st.success('Estado de saúde: {}'.format(result))
-        print('HELLO')
+        
      
 if __name__=='__main__': 
     main()
