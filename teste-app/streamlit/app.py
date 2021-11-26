@@ -1,11 +1,35 @@
 import streamlit as st 
+import json
+import requests
+import pandas as pd
 
 @st.cache()
   
 # function input
 def prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age):
-    a='Hello'
-    return a
+  #Create dataframe
+  d = {'Cholesterol':[Cholesterol],'ApLo':[ApLo],'ApHi':[ApHi],'Smoke_yes':[Smoke_yes],'Age':[Age]}
+  df = pd.DataFrame(data=d)
+
+  #converter em json
+  df=json.dumps(df.to_dict(orient='records'))
+
+  #API call
+  path='https://sdkfsdnfzzzzz.herokuapp.com/'
+  url=path +'oi'
+  headers={'content-type':'application/json'}
+  data=df
+
+  #Prediction
+  df=pd.DataFrame(r.json(),columns=r.json()[0].keys())
+
+  a=df['Predictions'][0]
+  if a=='yes':
+    a='Sick'
+  else:
+    a='Healthy'
+        
+  return a
       
   
 # webapp  
