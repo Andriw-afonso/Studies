@@ -7,6 +7,7 @@ import pandas as pd
   
 # function input
 def prediction(Cholesterol,ApLo,ApHi,Age):
+  Cholesterol=int(Cholesterol)
   #Create dataframe
   d = {'Cholesterol':[Cholesterol],'ApLo':[ApLo],'ApHi':[ApHi],'Age':[Age]}
   df = pd.DataFrame(data=d)
