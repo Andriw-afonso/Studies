@@ -7,10 +7,10 @@ import pandas as pd
   
 # function input
 def prediction(Cholesterol,ApLo,ApHi,Age):
-  Cholesterol=int(Cholesterol)
   #Create dataframe
   d = {'Cholesterol':[Cholesterol],'ApLo':[ApLo],'ApHi':[ApHi],'Age':[Age]}
   df = pd.DataFrame(data=d)
+  
 
   #converter em json
   df=json.dumps(df.to_dict(orient='records'))
@@ -56,7 +56,8 @@ def main():
     result =""
       
     # Predict 
-    if st.button("Predict"):        
+    if st.button("Predict"):
+        Cholesterol=int(Cholesterol)
         result = prediction(Cholesterol,ApLo,ApHi,Age) 
         st.success('Estado de saúde: {}'.format([Cholesterol,ApLo,ApHi,Age]))
         
