@@ -57,7 +57,7 @@ def main():
       
     # Predict 
     if st.button("Predict"): 
-        result = prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age) 
+        result = prediction(Cholesterol,ApLo,ApHi,Age) 
         st.success('Estado de saúde: {}'.format(result))
         
      
