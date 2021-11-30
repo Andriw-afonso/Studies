@@ -13,18 +13,18 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   
 
   #converter em json
-  df=json.dumps(df.to_dict(orient='records'))
+  df1=json.dumps(df.to_dict(orient='records'))
 
   #API call
   path='https://sdnfsdfhnqqqqq.herokuapp.com/'
   url=path +'oi'
   headers={'content-type':'application/json'}  
-  r=requests.post(url,data=df,headers=headers)
+  r=requests.post(url,data=df1,headers=headers)
 
   #Prediction
-  df=pd.DataFrame(r.json(),columns=r.json()[0].keys())
+  df2=pd.DataFrame(r.json(),columns=r.json()[0].keys())
 
-  a=df['Predictions'][0]
+  a=df2['Predictions'][0]
   if a==1:
     b='Sick'
   elif a==0:
@@ -32,7 +32,7 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   else: 
     b='ERRO DE PREDICAO'
         
-  return [a,b,df]
+  return [a,b,df2]
       
   
 # webapp  
