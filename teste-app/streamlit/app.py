@@ -48,7 +48,7 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True) 
       
     # Imput
-    Cholesterol = st.selectbox('Nível de colesterol',('1','2','3'))
+    Cholesterol = st.selectbox('Nível de colesterol',(1,2,3))
     ApLo =        st.number_input('Pressão diastólica')
     ApHi =        st.number_input('Pressão sistólica')      
     Age =         st.number_input('Idade') 
@@ -56,8 +56,7 @@ def main():
     result =""
       
     # Predict 
-    if st.button("Predict"):
-        Cholesterol=int(Cholesterol)
+    if st.button("Predict"):        
         result = prediction(Cholesterol,ApLo,ApHi,Age) 
         st.success('Estado de saúde: {}'.format(result))
         
