@@ -32,7 +32,7 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   else: 
     b='ERRO DE PREDICAO'
         
-  return [a,b,df2]
+  return b
       
   
 # webapp  
