@@ -6,16 +6,16 @@ import pandas as pd
 @st.cache()
   
 # function input
-def prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age):
+def prediction(Cholesterol,ApLo,ApHi,Age):
   #Create dataframe
-  d = {'Cholesterol':[Cholesterol],'ApLo':[ApLo],'ApHi':[ApHi],'Smoke_yes':[Smoke_yes],'Age':[Age]}
+  d = {'Cholesterol':[Cholesterol],'ApLo':[ApLo],'ApHi':[ApHi],'Age':[Age]}
   df = pd.DataFrame(data=d)
 
   #converter em json
   df=json.dumps(df.to_dict(orient='records'))
 
   #API call
-  path='https://sdjfsnfdzzzz.herokuapp.com/'
+  path='https://sdbfsdfbqqqqq.herokuapp.com/'
   url=path +'oi'
   headers={'content-type':'application/json'}
   data=df
@@ -50,8 +50,7 @@ def main():
     # Imput
     Cholesterol = st.selectbox('Nível de colesterol',('1','2','3'))
     ApLo =        st.number_input('Pressão diastólica')
-    ApHi =        st.number_input('Pressão sistólica') 
-    Smoke_yes =   st.selectbox('Fumante',('sim','nao')) 
+    ApHi =        st.number_input('Pressão sistólica')      
     Age =         st.number_input('Idade') 
 
     result =""
