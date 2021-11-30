@@ -24,7 +24,7 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   #Prediction
   df=pd.DataFrame(r.json(),columns=r.json()[0].keys())
 
-  a=df['Predictions'][0]
+  a=df['Predictions']
   if a==1:
     b='Sick'
   elif a==0:
