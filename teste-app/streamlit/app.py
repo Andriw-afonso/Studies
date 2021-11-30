@@ -24,7 +24,7 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   #Prediction
   df=pd.DataFrame(r.json(),columns=r.json()[0].keys())
 
-  a=df['Predictions'][0]
+  '''a=df['Predictions'][0]
   if a==1:
     b='Sick'
   elif a==0:
@@ -32,7 +32,7 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   else: 
     b='ERRO DE PREDICAO'
         
-  return b
+  return b'''
       
   
 # webapp  
@@ -59,7 +59,7 @@ def main():
     if st.button("Predict"):
         Cholesterol=int(Cholesterol)
         result = prediction(Cholesterol,ApLo,ApHi,Age) 
-        st.success('Estado de saúde: {}'.format(result))
+        st.success('Estado de saúde: {}'.format(df['Predictions']))
         
      
 if __name__=='__main__': 
