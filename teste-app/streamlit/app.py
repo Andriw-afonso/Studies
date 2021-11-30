@@ -16,7 +16,7 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   df1=json.dumps(df.to_dict(orient='records'))
 
   #API call
-  path='https://sdnfsdfhnqqqqq.herokuapp.com/'
+  path='https://sdkfsndfsdfnqqqqqqq.herokuapp.com/'
   url=path +'oi'
   headers={'content-type':'application/json'}  
   r=requests.post(url,data=df1,headers=headers)
