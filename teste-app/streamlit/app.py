@@ -17,20 +17,19 @@ def prediction(Cholesterol,ApLo,ApHi,Age):
   #API call
   path='https://sdbfsdfbqqqqq.herokuapp.com/'
   url=path +'oi'
-  headers={'content-type':'application/json'}
-  data=df
-  r=requests.post(url,data=data,headers=headers)
+  headers={'content-type':'application/json'}  
+  r=requests.post(url,data=df,headers=headers)
 
   #Prediction
   df=pd.DataFrame(r.json(),columns=r.json()[0].keys())
 
   a=df['Predictions'][0]
   if a==1:
-    a='Sick'
+    b='Sick'
   elif a==0:
-    a='Healthy'
+    b='Healthy'
   else: 
-    a='ERRO DE PREDICAO'
+    b='ERRO DE PREDICAO'
         
   return a
       
