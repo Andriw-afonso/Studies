@@ -59,7 +59,7 @@ def main():
     if st.button("Predict"):
         Cholesterol=int(Cholesterol)
         result = prediction(Cholesterol,ApLo,ApHi,Age) 
-        st.success('Estado de saúde: {}'.format([Cholesterol,ApLo,ApHi,Age]))
+        st.success('Estado de saúde: {}'.format(result))
         
      
 if __name__=='__main__': 
