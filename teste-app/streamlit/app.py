@@ -25,10 +25,12 @@ def prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age):
   df=pd.DataFrame(r.json(),columns=r.json()[0].keys())
 
   a=df['Predictions'][0]
-  if a=='yes':
+  if a==1:
     a='Sick'
-  else:
+  elif a==0:
     a='Healthy'
+  else: 
+    a='ERRO DE PREDICAO'
         
   return a
       
@@ -62,4 +64,3 @@ def main():
      
 if __name__=='__main__': 
     main()
-     
