@@ -15,7 +15,7 @@ def prediction(Cholesterol,ApLo,ApHi,Smoke_yes,Age):
   df=json.dumps(df.to_dict(orient='records'))
 
   #API call
-  path='https://hghghgdddddd.herokuapp.com/'
+  path='https://sdjfsnfdzzzz.herokuapp.com/'
   url=path +'oi'
   headers={'content-type':'application/json'}
   data=df
