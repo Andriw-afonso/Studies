@@ -23,7 +23,7 @@ def prediction(loja):
 
   #Prediction
   df2=pd.DataFrame(r.json(),columns=r.json()[0].keys())
-  df2=df2['Predictions']
+  df2=list(df2['Predictions'])[0]
   
         
   return df2
