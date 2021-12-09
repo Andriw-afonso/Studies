@@ -16,7 +16,7 @@ def prediction(loja):
   df1=json.dumps(df.to_dict(orient='records'))
 
   #API call
-  path='https://sdfsdfbbbbb.herokuapp.com/'
+  path='https://sdjfnsdfbbbbb.herokuapp.com/'
   url=path +'oi'
   headers={'content-type':'application/json'}  
   r=requests.post(url,data=df1,headers=headers)
