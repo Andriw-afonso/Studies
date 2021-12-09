@@ -49,7 +49,7 @@ def main():
     # Predict 
     if st.button("Predict"):        
         result = prediction(loja) 
-        st.success('Previsão: {}'.format(result))
+        st.success('Previsão R$ : {}'.format(result))
         
      
 if __name__=='__main__': 
